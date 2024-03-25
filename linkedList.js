@@ -192,6 +192,21 @@ export default class LinkedList {
         priorNode.next = nextNode;
         this.size -= 1;
     }
+
+    reverseList() {
+        let current = this.head;
+        let prev = null;
+
+        while (current !== null) {
+            const next = current.next;
+            current.next = prev;
+            prev = current;
+            current = next;
+        }
+
+        this.tail = this.head;
+        this.head = prev;
+    }
 }
 
 class Node {

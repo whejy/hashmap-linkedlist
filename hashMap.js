@@ -146,6 +146,8 @@ const hashMap = (() => {
         }, []);
     };
 
+    const reverseList = () => buckets.forEach((bucket) => bucket.reverseList());
+
     const printMap = () =>
         buckets.forEach((bucket) => console.log(bucket.toString()));
 
@@ -155,12 +157,12 @@ const hashMap = (() => {
         has,
         remove,
         length,
-        size,
         clear,
         keys,
         values,
         entries,
         expand,
+        reverseList,
         printMap,
     };
 })();
